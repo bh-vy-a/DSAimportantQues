@@ -1,4 +1,4 @@
-Welcome to the "DSAimportantQues" repository! This repository contains source code for frequently asked Data Structures and Algorithms (DSA) questions in various companies. These problems are designed to help you build and enhance your problem-solving skills.
+Hey, welcome to the repository! This repository contains source code for frequently asked Data Structures and Algorithms (DSA) questions in various companies. These problems are designed to help you build and enhance your problem-solving skills.
 
 Introduction
 
