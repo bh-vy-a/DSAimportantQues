@@ -1,0 +1,29 @@
+class Solution {
+public:
+    vector<vector<int>> printSeq(int ind,vector<int>&ds,vector<int> &nums,int n, vector<vector<int>> &ans){
+       if(ind==n){
+            if(ds.size()==0){
+                ds=vector<int>();
+                ans.push_back(ds);
+            }
+            else ans.push_back(ds);
+
+       }
+       else{
+       //not pick
+       printSeq(ind+1,ds,nums,n,ans);
+       //pick
+       ds.push_back(nums[ind]);
+       printSeq(ind+1,ds,nums,n,ans);
+       ds.pop_back(); 
+       
+       }
+       return ans;
+    } 
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>>ans;
+        vector<int>ds;
+        int n=nums.size();
+        return printSeq(0,ds,nums,n,ans);
+    }
+};
