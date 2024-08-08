@@ -1,0 +1,33 @@
+vector<string> generateBinaryStrings(int num){
+        vector<string> combinations;
+        int totalCombinations = pow(2, num);
+
+
+        for (int i = 0; i < totalCombinations; ++i) {
+            string binaryRepresentation = "";
+
+        
+            for (int j = num - 1; j >= 0; --j) {
+                if (i & (1 << j)) {
+                    binaryRepresentation += "1";
+                } else {
+                    binaryRepresentation += "0";
+                }
+            }
+
+        
+            bool hasConsecutiveOnes = false;
+            for (size_t k = 0; k < binaryRepresentation.size() - 1; ++k) {
+                if (binaryRepresentation[k] == '1' && binaryRepresentation[k + 1] == '1') {
+                    hasConsecutiveOnes = true;
+                    break;
+                }
+            }
+
+            if (!hasConsecutiveOnes) {
+                combinations.push_back(binaryRepresentation);
+        }
+    }
+
+    return combinations;
+    }
